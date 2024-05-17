@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Breezy</string>
 
+
+    <!--  Header section  -->
+    <string name="sp_city">Paris</string>
+    <string name="sp_time_header">Friday, 20 January</string>
+    <string name="sp_status">Sunny</string>
+    <string name="sp_centigrade_header">31°</string> <!-- alt 248 ~> ° -->
+
+
     <!--  Weekly section  -->
     <string name="weekly_forecast">Weekly forecast</string>
     <string name="sp_centigrade">17°</string> <!-- alt 248 ~> ° -->
