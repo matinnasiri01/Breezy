@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Breezy</string>
 
+    <!--  Status Message  -->
+    <string name="st_internet">No Internet Connection!</string>
+
 
     <!--  Header section  -->
     <string name="sp_city">Paris</string>
