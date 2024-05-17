@@ -15,4 +15,10 @@
     <string name="sp_humidity">48%</string>
     <string name="sp_visibility">1.6km</string>
 
+
+    <!-- Daily Summary section  -->
+    <string name="daily_summary">Daily Summary</string>
+    <string name="sp_summary">Daily Summary</string>
+
+
 </resources>
