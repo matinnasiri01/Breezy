@@ -1,4 +1,6 @@
 <resources>
+
+    <!--  App Name  -->
     <string name="app_name">Breezy</string>
 
     <!--  Status Message  -->
@@ -11,11 +13,9 @@
     <string name="sp_status">Sunny</string>
     <string name="sp_centigrade_header">31°</string> <!-- alt 248 ~> ° -->
 
-
-    <!--  Weekly section  -->
-    <string name="weekly_forecast">Weekly forecast</string>
-    <string name="sp_centigrade">17°</string> <!-- alt 248 ~> ° -->
-    <string name="sp_time">21 Jan</string>
+    <!-- Daily Summary section  -->
+    <string name="daily_summary">Daily Summary</string>
+    <string name="sp_summary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
 
 
     <!--  Weather Details section -->
@@ -27,9 +27,10 @@
     <string name="sp_visibility">1.6km</string>
 
 
-    <!-- Daily Summary section  -->
-    <string name="daily_summary">Daily Summary</string>
-    <string name="sp_summary">Daily Summary</string>
+    <!--  Weekly section  -->
+    <string name="weekly_forecast">Weekly forecast</string>
+    <string name="sp_centigrade">17°</string> <!-- alt 248 ~> ° -->
+    <string name="sp_time">21 Jan</string>
 
 
 </resources>

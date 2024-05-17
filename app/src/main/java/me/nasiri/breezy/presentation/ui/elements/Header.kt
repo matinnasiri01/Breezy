@@ -20,12 +20,12 @@ import androidx.compose.ui.unit.sp
 import me.nasiri.breezy.R
 
 @Composable
-fun Header(/*todo 1.get bg color 2.get text from state*/) {
-    val bgColor = Color.Red
+fun Header(/*todo 1.get text from state*/bgColor:Color =Color.Red ) {
+
     Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             text = stringResource(id = R.string.sp_city),
-            fontSize = 20.sp,
+            fontSize = 28.sp,
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(32.dp))

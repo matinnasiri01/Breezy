@@ -23,7 +23,7 @@ fun DailySummary(/*todo get summary from state!*/) {
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Text(text = stringResource(id = R.string.sp_summary))
+        Text(text = stringResource(id = R.string.sp_summary), maxLines = 5)
     }
 }
 
