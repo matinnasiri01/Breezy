@@ -40,13 +40,13 @@ fun WeatherDetails(/*todo get state*/contentColor: Color = Color.Red) {
             contentColor = contentColor
         )
         WeatherDetailItem(
-            icon = painterResource(id = R.drawable.ic_drop),
+            icon = painterResource(id = R.drawable.ic_dropm),
             label = stringResource(id = R.string.sp_humidity),
             value = stringResource(id = R.string.humidity),
             contentColor = contentColor
         )
         WeatherDetailItem(
-            icon = painterResource(id = R.drawable.ic_eye),
+            icon = painterResource(id = R.drawable.ic_eyem),
             label = stringResource(id = R.string.sp_visibility),
             value = stringResource(id = R.string.visibility),
             contentColor = contentColor

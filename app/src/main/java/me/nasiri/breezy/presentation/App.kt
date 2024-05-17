@@ -12,10 +12,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import me.nasiri.breezy.presentation.ui.elements.Header
-import me.nasiri.breezy.presentation.ui.elements.Progress
 import me.nasiri.breezy.presentation.ui.elements.StatusMessage
 import me.nasiri.breezy.presentation.ui.elements.WeatherDetails
-import me.nasiri.breezy.presentation.ui.elements.Weekly
+import me.nasiri.breezy.presentation.ui.elements.HourlyWeather
 
 @Composable
 fun App(modifier: Modifier = Modifier) {
@@ -31,7 +30,7 @@ fun App(modifier: Modifier = Modifier) {
         StatusMessage()
         Header(Color.White)
         WeatherDetails(Color.White)
-        Weekly()
+        HourlyWeather()
     }
 }
 

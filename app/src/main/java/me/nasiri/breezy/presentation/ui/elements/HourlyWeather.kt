@@ -29,7 +29,7 @@ import me.nasiri.breezy.R
 
 
 @Composable
-fun Weekly(/*todo get state*/) {
+fun HourlyWeather(/*todo get state*/) {
 
     Column(verticalArrangement = Arrangement.spacedBy(18.dp)) {
 
@@ -53,7 +53,7 @@ fun Weekly(/*todo get state*/) {
         LazyRow {
             /*todo fix item count*/
             items(7) {
-                WeeklyItem()
+                HourlyWeatherItem()
                 Spacer(modifier = Modifier.width(12.dp))
             }
         }
@@ -61,7 +61,7 @@ fun Weekly(/*todo get state*/) {
 }
 
 @Composable
-private fun WeeklyItem(/*todo get state*/) {
+private fun HourlyWeatherItem(/*todo get state*/) {
     Column(
         modifier = Modifier
             .border(2.dp, Color.Black, RoundedCornerShape(12.dp))
@@ -78,5 +78,5 @@ private fun WeeklyItem(/*todo get state*/) {
 @Preview(showBackground = true)
 @Composable
 private fun WeeklyPreview() {
-    Weekly()
+    HourlyWeather()
 }
