@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Breezy</string>
+
+    <!--  Weekly section  -->
+    <string name="weekly_forecast">Weekly forecast</string>
+    <string name="sp_centigrade">17°</string> <!-- alt 248 ~> ° -->
+    <string name="sp_time">21 Jan</string>
+
+
 </resources>
