@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import me.nasiri.breezy.R
 
 @Composable
-fun Header(/*todo 1.get text from state*/bgColor:Color =Color.Red ) {
+fun Header(bgColor: Color = Color.Red) {
 
     Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
