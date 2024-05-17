@@ -7,4 +7,12 @@
     <string name="sp_time">21 Jan</string>
 
 
+    <!--  Weather Details section -->
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+    <string name="visibility">Visibility</string>
+    <string name="sp_wind">4km/h</string>
+    <string name="sp_humidity">48%</string>
+    <string name="sp_visibility">1.6km</string>
+
 </resources>

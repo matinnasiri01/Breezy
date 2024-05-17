@@ -61,7 +61,7 @@ fun Weekly(/*todo get state*/) {
 }
 
 @Composable
-fun WeeklyItem(/*todo get state*/) {
+private fun WeeklyItem(/*todo get state*/) {
     Column(
         modifier = Modifier
             .border(2.dp, Color.Black, RoundedCornerShape(12.dp))
@@ -77,6 +77,6 @@ fun WeeklyItem(/*todo get state*/) {
 
 @Preview(showBackground = true)
 @Composable
-fun WeeklyPreview() {
+private fun WeeklyPreview() {
     Weekly()
 }
