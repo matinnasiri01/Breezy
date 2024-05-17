@@ -71,4 +71,12 @@ dependencies {
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+
+    implementation(libs.play.services.location)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+    implementation(libs.logging.interceptor)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
