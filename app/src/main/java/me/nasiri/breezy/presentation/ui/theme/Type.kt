@@ -1,4 +1,4 @@
-package me.nasiri.breezy.ui.theme
+package me.nasiri.breezy.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
