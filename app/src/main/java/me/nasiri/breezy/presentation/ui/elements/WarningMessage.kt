@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,19 +23,28 @@ import me.nasiri.breezy.R
 
 
 @Composable
-fun WarningMessage(message: String?, modifier: Modifier = Modifier) {
+fun WarningMessage(
+    modifier: Modifier = Modifier,
+    message: String?,
+    grColor: Color = MaterialTheme.colorScheme.error,
+) {
     Row(
         modifier = modifier
             .fillMaxWidth()
             .background(Color.Yellow, RoundedCornerShape(12.dp))
             .clip(RoundedCornerShape(12.dp))
-            .border(2.dp, Color.Black, RoundedCornerShape(12.dp))
+            .border(2.dp, grColor, RoundedCornerShape(12.dp))
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(painter = painterResource(id = R.drawable.ic_warning), contentDescription = null)
+        Icon(
+            painter = painterResource(id = R.drawable.ic_warning),
+            contentDescription = null,
+            tint = grColor
+        )
         Spacer(modifier = Modifier.width(4.dp))
         Text(
+            color = grColor,
             text = message!!,
             maxLines = 1,
             fontWeight = FontWeight.Bold

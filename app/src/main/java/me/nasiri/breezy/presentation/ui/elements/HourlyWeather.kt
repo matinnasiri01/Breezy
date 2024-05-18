@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,7 +30,7 @@ import me.nasiri.breezy.domain.weather.WeatherData
 
 
 @Composable
-fun HourlyWeather(data: List<WeatherData>) {
+fun HourlyWeather(data: List<WeatherData>, grColor: Color = MaterialTheme.colorScheme.primary) {
 
     Column(verticalArrangement = Arrangement.spacedBy(18.dp)) {
         Row(
@@ -40,12 +41,14 @@ fun HourlyWeather(data: List<WeatherData>) {
             Text(
                 text = stringResource(id = R.string.today),
                 fontWeight = FontWeight.Bold,
-                fontSize = 24.sp
+                fontSize = 24.sp,
+                color = grColor
             )
             Icon(
                 modifier = Modifier.size(width = 45.dp, height = 15.dp),
                 painter = painterResource(id = R.drawable.ic_arrow),
-                contentDescription = null
+                contentDescription = null,
+                tint = grColor
             )
         }
 
@@ -64,23 +67,25 @@ fun HourlyWeather(data: List<WeatherData>) {
 
 @Composable
 private fun HourlyWeatherItem(
+    grColor: Color = MaterialTheme.colorScheme.primary,
     temperatureCelsius: String,
     icon: Int,
     time: String,
 ) {
     Column(
         modifier = Modifier
-            .border(2.dp, Color.Black, RoundedCornerShape(12.dp))
+            .border(2.dp, grColor, RoundedCornerShape(12.dp))
             .padding(horizontal = 12.dp, vertical = 14.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Text(text = "$temperatureCelsius°C", fontWeight = FontWeight.Bold)
+        Text(text = "$temperatureCelsius°C", fontWeight = FontWeight.Bold, color = grColor)
         Icon(
             painter = painterResource(id = icon),
             contentDescription = null,
+            tint = grColor,
             modifier = Modifier.size(40.dp)
         )
-        Text(text = time)
+        Text(text = time, color = grColor)
     }
 }

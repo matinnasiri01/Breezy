@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,12 +25,16 @@ import me.nasiri.breezy.domain.weather.WeatherData
 import kotlin.math.roundToInt
 
 @Composable
-fun WeatherDetails(data: WeatherData, contentColor: Color = Color.White) {
+fun WeatherDetails(
+    data: WeatherData,
+    contentColor: Color = MaterialTheme.colorScheme.secondary,
+    containerColor: Color = MaterialTheme.colorScheme.primary,
+) {
 
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.Black, RoundedCornerShape(12.dp))
+            .background(containerColor, RoundedCornerShape(12.dp))
             .padding(horizontal = 10.dp, vertical = 14.dp),
         horizontalArrangement = Arrangement.SpaceAround,
         verticalAlignment = Alignment.CenterVertically

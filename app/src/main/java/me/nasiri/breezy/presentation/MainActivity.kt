@@ -37,4 +37,9 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    override fun onResume() {
+        viewModel.refreshState
+        super.onResume()
+    }
 }

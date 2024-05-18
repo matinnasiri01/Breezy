@@ -4,12 +4,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,7 +25,10 @@ import me.nasiri.breezy.domain.weather.WeatherData
 
 
 @Composable
-fun Header(data: WeatherData, bgColor: Color = Color.White) {
+fun Header(
+    data: WeatherData, contentColor: Color = MaterialTheme.colorScheme.secondary,
+    containerColor: Color = MaterialTheme.colorScheme.primary,
+) {
 
     Column(
         modifier = Modifier.fillMaxWidth(),
@@ -34,29 +37,31 @@ fun Header(data: WeatherData, bgColor: Color = Color.White) {
     ) {
 
         Text(
-            color = bgColor,
+            color = contentColor,
             text = data.time.convertToDataTime(),
             modifier = Modifier
-                .background(Color.Black, RoundedCornerShape(24.dp))
+                .background(containerColor, RoundedCornerShape(24.dp))
                 .padding(horizontal = 16.dp, vertical = 4.dp)
         )
 
+        Text(text = data.time.convertToTime(), color = containerColor)
 
-        Text(text = data.time.convertToTime())
-
-
-        Image(
+        Icon(
             modifier = Modifier
                 .width(200.dp)
                 .padding(vertical = 4.dp),
             painter = painterResource(id = data.weatherType.iconRes),
-            contentDescription = null
+            contentDescription = null,
+            tint = containerColor
         )
 
+        Text(
+            text = "${data.temperatureCelsius}°C",
+            fontSize = 72.sp,
+            fontWeight = FontWeight.Bold,
+            color = containerColor
+        )
 
-        Text(text = "${data.temperatureCelsius}°C", fontSize = 72.sp, fontWeight = FontWeight.Bold)
-
-
-        Text(text = data.weatherType.weatherDesc)
+        Text(text = data.weatherType.weatherDesc, color = containerColor)
     }
 }
