@@ -37,12 +37,12 @@ fun App(state: WeatherState, modifier: Modifier = Modifier) {
                 Spacer(modifier = Modifier.height(10.dp))
                 Header(data)
                 WeatherDetails(data)
-                HourlyWeather()
+            }
+            state.weatherInfo?.weatherDataPerDay?.get(0)?.let { data ->
+                HourlyWeather(data)
             }
         }
-
         if (state.isLoading) CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-
         state.error?.let {
             WarningMessage(message = it, modifier = Modifier.align(Alignment.Center))
         }

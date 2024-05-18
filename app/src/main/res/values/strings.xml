@@ -8,10 +8,7 @@
     <string name="humidity">Humidity</string>
     <string name="pressure">Pressure</string>
 
-    <!--  Weekly section  -->
+    <!--  Hourly Weather section  -->
     <string name="today">Today</string>
-    <string name="sp_centigrade">17°C</string> <!-- alt 248 ~> ° -->
-    <string name="sp_time">13:10</string>
-
 
 </resources>

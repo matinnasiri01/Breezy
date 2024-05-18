@@ -10,9 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,28 +21,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.nasiri.breezy.R
+import me.nasiri.breezy.domain.util.convertToTime
+import me.nasiri.breezy.domain.weather.WeatherData
 
 
 @Composable
-fun HourlyWeather(/*todo get state*/) {
+fun HourlyWeather(data: List<WeatherData>) {
 
     Column(verticalArrangement = Arrangement.spacedBy(18.dp)) {
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = stringResource(id = R.string.weekly_forecast),
+                text = stringResource(id = R.string.today),
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp
             )
-            Icon(// hint: 3*height == width
+            Icon(
                 modifier = Modifier.size(width = 45.dp, height = 15.dp),
                 painter = painterResource(id = R.drawable.ic_arrow),
                 contentDescription = null
@@ -51,9 +50,12 @@ fun HourlyWeather(/*todo get state*/) {
         }
 
         LazyRow {
-            /*todo fix item count*/
-            items(7) {
-                HourlyWeatherItem()
+            items(data) { each ->
+                HourlyWeatherItem(
+                    temperatureCelsius = each.temperatureCelsius.toString(),
+                    icon = each.weatherType.iconRes,
+                    time = each.time.convertToTime()
+                )
                 Spacer(modifier = Modifier.width(12.dp))
             }
         }
@@ -61,22 +63,24 @@ fun HourlyWeather(/*todo get state*/) {
 }
 
 @Composable
-private fun HourlyWeatherItem(/*todo get state*/) {
+private fun HourlyWeatherItem(
+    temperatureCelsius: String,
+    icon: Int,
+    time: String,
+) {
     Column(
         modifier = Modifier
             .border(2.dp, Color.Black, RoundedCornerShape(12.dp))
-            .padding(horizontal = 10.dp, vertical = 14.dp),
+            .padding(horizontal = 12.dp, vertical = 14.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Text(text = stringResource(id = R.string.sp_centigrade), fontWeight = FontWeight.Bold)
-        Icon(imageVector = Icons.Default.Star, contentDescription = null)
-        Text(text = stringResource(id = R.string.sp_time))
+        Text(text = "$temperatureCelsius°C", fontWeight = FontWeight.Bold)
+        Icon(
+            painter = painterResource(id = icon),
+            contentDescription = null,
+            modifier = Modifier.size(40.dp)
+        )
+        Text(text = time)
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun WeeklyPreview() {
-    HourlyWeather()
 }

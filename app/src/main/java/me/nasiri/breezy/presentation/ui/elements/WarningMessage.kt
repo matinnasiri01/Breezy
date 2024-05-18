@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import me.nasiri.breezy.R
@@ -36,7 +35,7 @@ fun WarningMessage(message: String?, modifier: Modifier = Modifier) {
         Icon(painter = painterResource(id = R.drawable.ic_warning), contentDescription = null)
         Spacer(modifier = Modifier.width(4.dp))
         Text(
-            text = message ?: stringResource(id = R.string.er_unknown),
+            text = message!!,
             maxLines = 1,
             fontWeight = FontWeight.Bold
         )
