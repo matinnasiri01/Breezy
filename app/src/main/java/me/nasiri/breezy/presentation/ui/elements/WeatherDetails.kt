@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.sp
 import me.nasiri.breezy.R
 
 @Composable
-fun WeatherDetails(/*todo get state*/contentColor: Color = Color.Red) {
+fun WeatherDetails(/*todo get state*/contentColor: Color = Color.White) {
 
     Row(
         modifier = Modifier
@@ -65,7 +65,7 @@ private fun WeatherDetailItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        /*todo 1.change size 2.find the icons*/
+        /*todo 1.change size*/
         Icon(painter = icon, contentDescription = null, tint = contentColor)
         Text(
             color = contentColor, text = label, fontWeight = FontWeight.Bold, fontSize = 24.sp

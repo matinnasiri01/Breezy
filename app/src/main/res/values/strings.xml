@@ -9,12 +9,6 @@
     <string name="er_unknown">Unknown error!</string>
 
 
-    <!--  Header section  -->
-    <string name="sp_city">Paris</string>
-    <string name="sp_time_header">Friday, 20 January</string>
-    <string name="sp_status">Sunny</string>
-    <string name="sp_centigrade_header">31°</string> <!-- alt 248 ~> ° -->
-
     <!-- Daily Summary section  -->
     <string name="daily_summary">Daily Summary</string>
     <string name="sp_summary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
@@ -31,8 +25,8 @@
 
     <!--  Weekly section  -->
     <string name="weekly_forecast">Weekly forecast</string>
-    <string name="sp_centigrade">17°</string> <!-- alt 248 ~> ° -->
-    <string name="sp_time">21 Jan</string>
+    <string name="sp_centigrade">17°C</string> <!-- alt 248 ~> ° -->
+    <string name="sp_time">13:10</string>
 
 
 </resources>
