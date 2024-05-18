@@ -18,18 +18,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import me.nasiri.breezy.R
 
 
 @Composable
-fun StatusMessage() {
-    val containerColor = Color.Yellow
+fun WarningMessage(message: String?, modifier: Modifier = Modifier) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
-            .background(containerColor, RoundedCornerShape(12.dp))
+            .background(Color.Yellow, RoundedCornerShape(12.dp))
             .clip(RoundedCornerShape(12.dp))
             .border(2.dp, Color.Black, RoundedCornerShape(12.dp))
             .padding(16.dp),
@@ -38,16 +36,9 @@ fun StatusMessage() {
         Icon(painter = painterResource(id = R.drawable.ic_warning), contentDescription = null)
         Spacer(modifier = Modifier.width(4.dp))
         Text(
-            text = stringResource(id = R.string.er_internet),
+            text = message ?: stringResource(id = R.string.er_unknown),
             maxLines = 1,
             fontWeight = FontWeight.Bold
         )
     }
-}
-
-
-@Preview
-@Composable
-private fun StatusMessagePreview() {
-    StatusMessage()
 }
