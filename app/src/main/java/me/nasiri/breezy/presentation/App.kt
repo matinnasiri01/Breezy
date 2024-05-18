@@ -36,7 +36,7 @@ fun App(state: WeatherState, modifier: Modifier = Modifier) {
             state.weatherInfo?.currentWeatherData?.let { data ->
                 Spacer(modifier = Modifier.height(10.dp))
                 Header(data)
-                WeatherDetails()
+                WeatherDetails(data)
                 HourlyWeather()
             }
         }

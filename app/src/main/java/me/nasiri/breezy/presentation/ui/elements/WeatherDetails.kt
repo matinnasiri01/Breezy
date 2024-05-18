@@ -17,13 +17,14 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.nasiri.breezy.R
+import me.nasiri.breezy.domain.weather.WeatherData
+import kotlin.math.roundToInt
 
 @Composable
-fun WeatherDetails(/*todo get state*/contentColor: Color = Color.White) {
+fun WeatherDetails(data: WeatherData, contentColor: Color = Color.White) {
 
     Row(
         modifier = Modifier
@@ -34,21 +35,24 @@ fun WeatherDetails(/*todo get state*/contentColor: Color = Color.White) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         WeatherDetailItem(
+            value = "${data.windSpeed}",
             icon = painterResource(id = R.drawable.ic_wind),
-            label = stringResource(id = R.string.sp_wind),
-            value = stringResource(id = R.string.wind),
+            type = "km/h",
+            liable = stringResource(id = R.string.wind),
             contentColor = contentColor
         )
         WeatherDetailItem(
-            icon = painterResource(id = R.drawable.ic_dropm),
-            label = stringResource(id = R.string.sp_humidity),
-            value = stringResource(id = R.string.humidity),
+            value = "${data.humidity}",
+            icon = painterResource(id = R.drawable.ic_drop),
+            type = "%",
+            liable = stringResource(id = R.string.humidity),
             contentColor = contentColor
         )
         WeatherDetailItem(
-            icon = painterResource(id = R.drawable.ic_eyem),
-            label = stringResource(id = R.string.sp_visibility),
-            value = stringResource(id = R.string.visibility),
+            value = "${data.pressure.roundToInt()}",
+            icon = painterResource(id = R.drawable.ic_pressure),
+            type = "hpa",
+            liable = stringResource(id = R.string.pressure),
             contentColor = contentColor
         )
     }
@@ -57,26 +61,20 @@ fun WeatherDetails(/*todo get state*/contentColor: Color = Color.White) {
 @Composable
 private fun WeatherDetailItem(
     icon: Painter,
-    label: String,
     value: String,
+    type: String,
+    liable: String,
     contentColor: Color,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        /*todo 1.change size*/
         Icon(painter = icon, contentDescription = null, tint = contentColor)
-        Text(
-            color = contentColor, text = label, fontWeight = FontWeight.Bold, fontSize = 24.sp
-        )
-        Text(color = contentColor, text = value)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(color = contentColor, text = value, fontWeight = FontWeight.Bold, fontSize = 24.sp)
+            Text(color = contentColor, text = type, fontSize = 11.sp)
+        }
+        Text(color = contentColor, text = liable)
     }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-private fun WeatherDetailsPreview() {
-    WeatherDetails()
 }
